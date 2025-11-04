@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node --max-old-space-size=64 index.js"
   },
   "dependencies": {
     "express": "^4.19.2"
