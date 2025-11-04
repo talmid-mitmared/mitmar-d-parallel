@@ -9,9 +9,10 @@
   ],
   "scripts": {
     "dev": "concurrently -n A,B,C -c green,blue,magenta \"npm:dev -w apps/commoditiy-server-a\" \"npm:dev -w apps/commoditiy-server-b\" \"npm:dev -w apps/commoditiy-server-c\"",
-    "dev:a": "npm run dev -w apps/commoditiy-server-a --port=5001",
-    "dev:b": "npm run dev -w apps/commoditiy-server-b --port=5002",
-    "dev:c": "npm run dev -w apps/commoditiy-server-c --port=5003",
+  
+    "dev:a": "cross-env PORT=5001 node --max-old-space-size=64 apps/commodity-server-a --port=5001",
+    "dev:b": "cross-env PORT=5002 node --max-old-space-size=64 apps/commodity-server-b --port=5002",
+    "dev:c": "cross-env PORT=5003 node --max-old-space-size=64 apps/commodity-server-c --port=5003",
     "start": "npm run start -w apps/commoditiy-service-a & npm run start -w apps/commoditiy-service-b & npm run start -w apps/commoditiy-service-c"
   },
   "repository": {
