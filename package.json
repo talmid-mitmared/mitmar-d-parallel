@@ -2,7 +2,6 @@
   "name": "mitmar-d-parallel",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "workspaces": [
     "apps/*"
@@ -11,7 +10,8 @@
     "dev": "concurrently -n A,B,C -c green,blue,magenta \"npm:dev -w apps/commoditiy-server-a\" \"npm:dev -w apps/commoditiy-server-b\" \"npm:dev -w apps/commoditiy-server-c\"",
     "start:a": "cross-env PORT=5001 node apps/server-a/index.js",
     "start:b": "cross-env PORT=5002 node apps/server-b/index.js",
-    "start:c": "cross-env PORT=5003 node apps/server-c/index.js"
+    "start:c": "cross-env PORT=5003 node apps/server-c/index.js",
+    "start": "tsx ./index.ts"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
   "homepage": "https://github.com/talmid-mitmared/mitmar-d-parallel#readme",
   "devDependencies": {
     "concurrently": "^9.2.1",
-    "yargs": "^18.0.0"
+    "yargs": "^18.0.0",    
+    "tsx": "^4.19.0"
+
   }
 }
